@@ -1,15 +1,17 @@
-# Intentionally flawed Python program
+# Fixed Python program to draw five random cards
 
-# importing modules
-import itertools, random
+import itertools
+import random
 
-# make a deck of cards
-deck = list(itertools.product(range(1,14),['Spade','Heart','Diamond','Club'])
+# Create a deck of cards with ranks and suits
+ranks = [str(n) for n in range(2, 11)] + ['Jack', 'Queen', 'King', 'Ace']
+suits = ['Spades', 'Hearts', 'Diamonds', 'Clubs']
+deck = list(itertools.product(ranks, suits))
 
-# shuffle the cards
+# Shuffle the deck
 random.shuffle(deck)
 
-# draw five cards
+# Draw five cards
 print("You got:")
-for i in range(5)
-   print(deck[i][0], "of", deck[i][1]
+for rank, suit in deck[:5]:
+    print(f"{rank} of {suit}")
